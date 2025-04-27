@@ -33,7 +33,7 @@ export default function ProfileCard() {
                 Bridging the Gap Between Design and Development: Where creativity meets functionality, and innovation drives progress.
               </p>
               <p className="italic mt-3 text-muted-foreground">
-                Keep moving, don't settle. 🚀
+                Keep moving, don&apos;t settle. 🚀
               </p>
             </div>
           </div>
