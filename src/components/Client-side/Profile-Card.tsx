@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useTheme } from 'next-themes'
 
 export default function ProfileCard() {
-  const { theme } = useTheme()
+  useTheme()
 
   return (
     <div className="px-4 pt-10 pb-35 flex justify-center">
@@ -19,7 +19,7 @@ export default function ProfileCard() {
           <div className="flex-1 max-w-2xl">
             <p className="text-sm uppercase tracking-widest text-muted-foreground mb-2">🌐 About Me</p>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              hey, I'm <span className="text-yellow-400 dark:text-yellow-300">Fares</span> 👋
+            hey, I&apos;m <span className="text-yellow-400 dark:text-yellow-300">Fares</span> 👋
             </h1>
             <p className="text-lg leading-relaxed text-muted-foreground">
               Passionate FullStack Web Developer from Saudi Arabia, pushing the boundaries of web technology to create immersive digital experiences.
