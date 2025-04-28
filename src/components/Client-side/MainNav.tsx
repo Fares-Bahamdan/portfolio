@@ -10,6 +10,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { ModeToggle } from '@/components/Client-side/ModeToggle'
+import { Menu, X } from 'lucide-react' // Add lucide icons (you can install `lucide-react` if not installed)
 
 const navItems = [
   { title: 'Home', href: '/' },
@@ -22,6 +23,7 @@ export default function MainNav() {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const [activeSection, setActiveSection] = useState<string>('/')
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY && window.scrollY > 100) {
@@ -66,24 +68,26 @@ export default function MainNav() {
   return (
     <header
       className={cn(
-        'w-full flex items-center justify-between px-8 py-4 fixed top-0 z-50 transition-transform duration-300',
+        'w-full flex items-center justify-between px-6 py-4 fixed top-0 z-50 transition-transform duration-300 bg-white/70 dark:bg-black/70 backdrop-blur-md border-b border-neutral-300 dark:border-white/10',
         isVisible ? 'translate-y-0' : '-translate-y-full'
       )}
     >
+      {/* Logo */}
       <Link
         href="/"
-        className="flex items-center md:w-10 md:h-10 rounded-full overflow-hidden border-white/20 dark:border-white/30 shadow-lg"
+        className="flex items-center w-10 h-10 rounded-full overflow-hidden border border-white/20 dark:border-white/30 shadow-lg"
       >
         <Image
           src="/Logo.png"
           alt="Logo"
-          width={46}
-          height={46}
+          width={40}
+          height={40}
           className="object-contain"
         />
       </Link>
 
-      <div className="flex-1 flex justify-center">
+      {/* Desktop Navigation */}
+      <div className="hidden sm:flex flex-1 justify-center">
         <NavigationMenu>
           <NavigationMenuList
             className={cn(
@@ -95,7 +99,6 @@ export default function MainNav() {
           >
             {navItems.map((item, i) => {
               const isActive = activeSection === item.href
-
               return (
                 <NavigationMenuItem key={i}>
                   <Link
@@ -117,8 +120,44 @@ export default function MainNav() {
         </NavigationMenu>
       </div>
 
-      <div className="w-9" />
-      <ModeToggle />
+      {/* Mobile Menu Button */}
+      <button
+        className="flex sm:hidden items-center justify-center w-10 h-10 text-neutral-700 dark:text-neutral-300"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+
+      {/* ModeToggle always visible */}
+      <div className="hidden sm:flex">
+        <ModeToggle />
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white dark:bg-black flex flex-col items-center gap-4 py-4 shadow-lg sm:hidden">
+          {navItems.map((item, i) => {
+            const isActive = activeSection === item.href
+            return (
+              <Link
+                key={i}
+                href={item.href}
+                className={cn(
+                  'text-lg font-medium transition-colors',
+                  'text-neutral-700 dark:text-neutral-300 hover:text-black dark:hover:text-white',
+                  isActive ? 'underline underline-offset-4' : ''
+                )}
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.title}
+              </Link>
+            )
+          })}
+          <div className="mt-2">
+            <ModeToggle />
+          </div>
+        </div>
+      )}
     </header>
   )
 }
