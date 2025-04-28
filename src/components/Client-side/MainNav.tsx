@@ -10,7 +10,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { ModeToggle } from '@/components/Client-side/ModeToggle'
-import { Menu, X } from 'lucide-react' // Add lucide icons (you can install `lucide-react` if not installed)
+import { Menu, X } from 'lucide-react'
 
 const navItems = [
   { title: 'Home', href: '/' },
