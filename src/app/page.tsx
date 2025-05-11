@@ -26,7 +26,7 @@ export default function Home() {
   ]}
 />
     </div>
-    <div id="Project" className="">
+    <div id="Project">
       <ProjectCard
         title="Brute Force Simulation and Mitigation"
         description="Two Python scripts demonstrating brute force attacks and defensive mitigations, focusing on FTP services using ftplib and iptables."
@@ -41,6 +41,14 @@ export default function Home() {
         technologies={['Python', 'Pandas', 'Seaborn', 'Scikit-learn', 'Machine Learning']}
         repoUrl="https://github.com/your-username/uber-mileage-prediction"
         logoSrc="/ML.png"
+
+      />
+            <ProjectCard
+        title="Namaa Insights"
+        description="A User Friendly Stock insight for the Saudi Stock Exchange Market (TADAWUL) it is developed to equip investors with smarter decision-making tools. This platform combines data analytics, AI-powered insights, real-time market news, and personalized reports, all tailored to support informed investment strategies."
+        technologies={['Nextjs', 'Tailwind', 'Supabase', 'OpenAI']}
+        repoUrl="https://github.com/ZiyadG7/Namaa"
+        logoSrc="/Namaa.png"
       />
     </div>
     <div id="Contact">
