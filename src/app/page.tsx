@@ -36,7 +36,7 @@ export default function Home() {
         title="Brute Force Simulation and Mitigation"
         description="Two Python scripts demonstrating brute force attacks and defensive mitigations, focusing on FTP services using ftplib and iptables."
         technologies={['Python', 'Networking', 'Cybersecurity', 'FTP', 'iptables']}
-        repoUrl="https://github.com/your-username/brute-force-mitigation"
+        repoUrl="https://github.com/Fares-Bahamdan/ICS344_ProjectCode"
         logoSrc="/KaliLinux.png"
       />
       
@@ -44,7 +44,7 @@ export default function Home() {
         title="Uber Data Analysis and Mileage Prediction"
         description="An end-to-end project featuring data cleaning, visualization, feature engineering, regression modeling, and performance tuning to predict ride distances using Uber dataset."
         technologies={['Python', 'Pandas', 'Seaborn', 'Scikit-learn', 'Machine Learning']}
-        repoUrl="https://github.com/your-username/uber-mileage-prediction"
+        repoUrl="https://github.com/Fares-Bahamdan/Uber_Dataset"
         logoSrc="/ML.png"
 
       />
