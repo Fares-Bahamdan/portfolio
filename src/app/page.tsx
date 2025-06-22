@@ -4,6 +4,8 @@ import ProjectCard from "@/components/Client-side/ProjectCard";
 import PersonalPortfolioCard from "@/components/Client-side/Profile-Card";
 import EducationCard from "@/components/Client-side/EducationCard";
 import ScrollToTopButton from "@/components/Client-side/ScrollToTopButton";
+import Technologies from "@/components/Client-side/Technologies";
+
 
 export default function Home() {
   return (
@@ -24,7 +26,10 @@ export default function Home() {
       logoSrc: "/KFUPM.png" // replace with your actual logo path
     }
   ]}
-/>
+    />
+    <div id="Tech">
+      <Technologies />
+    </div>
     </div>
     <div id="Project">
       <ProjectCard

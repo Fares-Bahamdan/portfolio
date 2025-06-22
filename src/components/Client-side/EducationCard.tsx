@@ -22,7 +22,7 @@ export default function EducationCard({
   educationEntries,
 }: EducationCardProps) {
   return (
-    <div className="px-4 pt-10 pb-100 flex justify-center">
+    <div className="px-4 pt-10 pb-20 flex justify-center">
       <div className="relative w-full max-w-6xl h-auto rounded-3xl overflow-hidden shadow-2xl 
                       dark:bg-gradient-to-br dark:from-zinc-700 dark:to-black bg-white p-8 md:p-12">
 
